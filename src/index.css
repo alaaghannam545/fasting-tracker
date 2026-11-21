@@ -1,0 +1,60 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'IBM Plex Sans Arabic', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --color-teal: #0f6b63;
+  --color-teal-dark: #0a4f49;
+  --color-teal-50: #e8f3f2;
+  --color-teal-100: #cfe6e3;
+  --color-amber: #8a3f0f;
+  --color-amber-50: #fbf1e9;
+  --color-amber-100: #f3dcc9;
+  --color-ink: #1d2626;
+  --color-muted: #55615f;
+  --color-line: #dfe5e4;
+}
+
+html,
+body {
+  background: #ffffff;
+  color: var(--color-ink);
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-variant-numeric: tabular-nums;
+  overscroll-behavior-y: none;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+/* Keep times and numbers in their own direction run inside RTL text. */
+.ltr {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  @page {
+    size: A4 landscape;
+    margin: 10mm;
+  }
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
